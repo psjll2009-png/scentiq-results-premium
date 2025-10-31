@@ -3,20 +3,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const scentData = {
     email: "user@email.com",
-    prompt: 'Warm cozy winter scent with vanilla and wood',
-    blendName: "Cozy Cedar Vanilla",
-    topNotes: ["Cardamom", "Bergamot"],
-    middleNotes: ["Vanilla", "Tonka Bean"],
-    baseNotes: ["Cedarwood", "Amber"],
+    prompt: "Elegant floral scent with citrus top notes and a musky base",
+    blendName: "Floral Citrus Musk",
+    topNotes: ["Grapefruit", "Lemon Zest"],
+    middleNotes: ["Jasmine", "Rose", "Neroli"],
+    baseNotes: ["Musk", "Vetiver"],
     description:
-      "A warm, inviting profile inspired by your prompt. Balanced spice and sweetness with woody depth.",
+      "A sophisticated blend with a crisp citrus opening, heart of white florals, and a rich musky foundation. Designed to feel fresh and luxurious.",
     formula: [
-      { oil: "Cardamom", percentage: 15 },
-      { oil: "Bergamot", percentage: 10 },
-      { oil: "Vanilla", percentage: 25 },
-      { oil: "Tonka Bean", percentage: 20 },
-      { oil: "Cedarwood", percentage: 20 },
-      { oil: "Amber", percentage: 10 },
+      { oil: "Grapefruit", percentage: 20 },
+      { oil: "Lemon Zest", percentage: 15 },
+      { oil: "Jasmine", percentage: 20 },
+      { oil: "Rose", percentage: 15 },
+      { oil: "Neroli", percentage: 10 },
+      { oil: "Musk", percentage: 10 },
+      { oil: "Vetiver", percentage: 10 },
     ],
   };
 
@@ -24,26 +25,31 @@ document.addEventListener("DOMContentLoaded", function () {
     resultsContainer.innerHTML = `
       <div class="result-card">
         <p><strong>Email:</strong> ${data.email}</p>
-        <p><strong>Prompt:</strong> "${data.prompt}"</p>
+        <p><strong>Prompt:</strong> “${data.prompt}”</p>
         <hr />
         <h2>🧪 Blend Name</h2>
         <p>${data.blendName}</p>
-        <h3>🌸 Top Notes</h3>
+        <h3>🍋 Top Notes</h3>
         <p>${data.topNotes.join(", ")}</p>
-        <h3>🌿 Middle Notes</h3>
+        <h3>🌸 Middle Notes</h3>
         <p>${data.middleNotes.join(", ")}</p>
         <h3>🌲 Base Notes</h3>
         <p>${data.baseNotes.join(", ")}</p>
-        <h3>📝 Description</h3>
+        <h3>📝 Scent Description</h3>
         <p>${data.description}</p>
-        <h3>🧫 Formula</h3>
+        <h3>📊 Formula</h3>
         <ul>
           ${data.formula
-            .map(
-              (item) => `<li>${item.oil}: ${item.percentage}%</li>`
-            )
+            .map((item) => `<li>${item.oil}: ${item.percentage}%</li>`)
             .join("")}
         </ul>
+        <h3>🎛️ Adjustment Sliders</h3>
+        <label>Top Note Intensity:</label><br/>
+        <input type="range" min="0" max="100" value="60" /><br/><br/>
+        <label>Middle Note Intensity:</label><br/>
+        <input type="range" min="0" max="100" value="70" /><br/><br/>
+        <label>Base Note Intensity:</label><br/>
+        <input type="range" min="0" max="100" value="50" /><br/><br/>
         <div class="button-group">
           <button onclick="window.print()">🖨️ Print</button>
           <button onclick="saveBlend()">💾 Save</button>
@@ -56,12 +62,10 @@ document.addEventListener("DOMContentLoaded", function () {
   generateResults(scentData);
 });
 
-// Placeholder for save functionality
 function saveBlend() {
-  alert("Save function will be implemented.");
+  alert("Save functionality coming soon.");
 }
 
-// Placeholder for remix functionality
 function remixBlend() {
-  alert("Remix function will be implemented.");
+  alert("Remix functionality coming soon.");
 }
