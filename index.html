@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Premium Scent Blend</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Your Premium Custom Scent</h1>
+    <div class="user-info">
+      <p><strong>Email:</strong> user@email.com</p>
+      <p><strong>Prompt:</strong> “Elegant floral scent with citrus top notes and a musky base”</p>
+    </div>
+
+    <hr />
+
+    <div class="blend-section">
+      <h2>🧪 Blend Name</h2>
+      <p>Floral Citrus Musk</p>
+
+      <h2>🍋 Top Notes</h2>
+      <p>Grapefruit, Lemon Zest</p>
+
+      <h2>🌸 Middle Notes</h2>
+      <p>Jasmine, Rose, Neroli</p>
+
+      <h2>🌲 Base Notes</h2>
+      <p>Musk, Vetiver</p>
+
+      <h2>📝 Scent Description</h2>
+      <p>A sophisticated blend with a crisp citrus opening, heart of white florals, and a rich musky foundation. Designed to feel fresh and luxurious.</p>
+
+      <h2>🎛️ Adjustment Sliders</h2>
+      <label>Top Note Intensity: <input type="range" min="0" max="100" value="60" /></label><br/>
+      <label>Middle Note Intensity: <input type="range" min="0" max="100" value="70" /></label><br/>
+      <label>Base Note Intensity: <input type="range" min="0" max="100" value="80" /></label>
+    </div>
+
+    <div class="button-group">
+      <button onclick="window.print()">🖨️ Print</button>
+      <button onclick="saveBlend()">💾 Save</button>
+      <button onclick="remixBlend()">🎲 Remix</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
